@@ -1,0 +1,12 @@
+.header-footer {
+  background-color: lightblue;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+}

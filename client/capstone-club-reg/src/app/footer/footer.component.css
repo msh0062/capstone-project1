@@ -1,0 +1,6 @@
+footer {
+  height: 50px;
+  position: relative;
+  bottom: 0;
+  border-top: 3px solid #000;
+}

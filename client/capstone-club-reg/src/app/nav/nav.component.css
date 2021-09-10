@@ -1,0 +1,18 @@
+ul {
+  list-style-type: none;
+  background-color: tan;
+  height: 2.25em;
+  margin-top: 1em;
+  padding-top: 0em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+li > a {
+  color: Black;
+  text-decoration: none;
+  display: inline;
+  cursor: pointer;
+}
