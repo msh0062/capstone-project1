@@ -1,0 +1,17 @@
+[
+	{
+		"OrganizationName": "Boys",
+		"OrganizationId": "Boys",
+		"Description": "This is clubs for Boys sports."
+	},
+	{
+		"OrganizationName": "Girls",
+		"OrganizationId": "Girls",
+		"Description": "This is for Girls sports."
+    },
+    {
+		"OrganizationName": "Mixed",
+		"OrganizationId": "Mixed",
+		"Description": "These are clubs where Boys and Girls are together" 
+	}
+]
