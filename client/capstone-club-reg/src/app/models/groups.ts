@@ -1,3 +1,5 @@
+import { Members } from "./members";
+
 export interface Groups {
     GroupId: number,
     GroupName: string,
@@ -6,12 +8,5 @@ export interface Groups {
     SponsorPhone: number,
     SponsorEmail: string,
     MaxGroupSize: number,
-        Members: [
-            {
-                MemberId: number,
-                MemberEmail: string,
-                MemberName: string,
-                MemberPhone: number
-            },
-        ]
+    Members: Members[]
 }

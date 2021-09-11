@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroupName } from '@angular/forms';
 import { Clubs } from '../models/clubs';
+import { Groups } from '../models/groups';
 import { ClubsService } from '../services/clubs.service';
+import { GroupService } from '../services/group.service';
 
 @Component({
   selector: 'cr-view-all',
@@ -9,17 +12,17 @@ import { ClubsService } from '../services/clubs.service';
 })
 export class ViewAllComponent implements OnInit {
 
-  club: Clubs;
-  allClubs;
   errorMessage: string;
+  group: Groups;
+  allGroups;
 
-  constructor(private clubsService: ClubsService) { }
+  constructor(private groupService: GroupService) { }
 
-  getClubs(): void {
-    this.clubsService.getClubs()
+  getGroups(): void {
+    this.groupService.getAllGroups()
       .subscribe((res: any) => {
-        this.allClubs = res;
-        console.log(this.allClubs)
+        this.allGroups = res;
+        console.log(this.allGroups)
   },
   err => {this.errorMessage = err;
   console.log(this.errorMessage);
@@ -27,7 +30,7 @@ export class ViewAllComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    this.getClubs();
+    this.getGroups();
   }
 
 }

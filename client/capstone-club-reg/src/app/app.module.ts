@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { BoyRegComponent } from './boy-reg/boy-reg.component';
+import { GirlRegComponent } from './girl-reg/girl-reg.component';
+import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ViewAllComponent } from './view-all/view-all.component';
     MainComponent,
     CoachComponent,
     HomeComponent,
-    ViewAllComponent
+    ViewAllComponent,
+    BoyRegComponent,
+    GirlRegComponent,
+    MixedRegComponent
   ],
   imports: [
     BrowserModule,

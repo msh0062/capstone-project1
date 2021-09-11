@@ -18,3 +18,20 @@ li > a {
   padding-right: 1.45em;
   padding-left: 1.45em;
 }
+
+@media (max-width: 444px) {
+  ul {
+    height: auto;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    background: none;
+    margin: 0.15em;
+    margin-top: 0.75em;
+    padding-bottom: 0.25em;
+    width: 100%;
+    text-align: center;
+  }
+}

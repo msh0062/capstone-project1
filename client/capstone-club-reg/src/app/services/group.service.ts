@@ -9,26 +9,30 @@ import { group } from '@angular/animations';
 })
 export class GroupService {
 
-  getAllGroups = 'http://localhost:8082/api/groups/'
+  allGroups = 'http://localhost:8082/api/groups/'
 
 
   jsonContentTypeHeaders = {
-    headers: new HttpHeaders().set('Content-Type', 'application/json') //expect json data 
+    headers: new HttpHeaders().set('Content-Type', 'application/json')  
   }
 
-  getClubs(): Observable<Groups> {
-    const results: Observable<Groups> = this.http.get<Groups>(this.getAllGroups);
-    console.log(`getClubs() returned ${results}`);
+  getAllGroups(): Observable<Groups> {
+    const results: Observable<Groups> = this.http.get<Groups>(this.allGroups);
     return results;
   }
 
   getGroupById(groupId: number): Observable<Groups> {
-  const results: Observable<Groups> = this.http.get<Groups>(`${this.getAllGroups}/${groupId}`);
+  const results: Observable<Groups> = this.http.get<Groups>(`${this.allGroups}/${groupId}`);
   return results ;
   }
 
+  getGroupByName(groupName: string): Observable<Groups> {
+    const results: Observable<Groups> = this.http.get<Groups>(`${this.allGroups}/${groupName}`);
+    return results ;
+    }
+
   addGroup(groupName: Groups): Observable<Groups> {
-    const results: Observable<Groups> = this.http.post<Groups>(this.getAllGroups, groupName, this.jsonContentTypeHeaders);
+    const results: Observable<Groups> = this.http.post<Groups>(this.allGroups, groupName, this.jsonContentTypeHeaders);
     return results;
   }
 

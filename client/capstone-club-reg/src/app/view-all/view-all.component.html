@@ -1,5 +1,9 @@
 <ul>
-    <li *ngFor="let club of allClubs">
-        <p>{{club.OrganizationName}}</p>
+    <!-- <li *ngFor="let club of allClubs" class="list">
+        <a routerLink="{{club.OrganizationName}}" routerLinkActive= "active"> {{club.OrganizationName}} </a>
+         <p>{{club.OrganizationName}}</p> 
+    </li> -->
+    <li *ngFor="let group of allGroups"> 
+        {{group.GroupName}}
     </li>
 </ul>
