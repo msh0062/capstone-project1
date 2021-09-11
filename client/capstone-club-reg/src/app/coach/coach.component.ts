@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GroupService } from '../services/group.service';
 
 @Component({
   selector: 'cr-coach',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoachComponent implements OnInit {
 
-  constructor() { }
+  constructor(private groups: GroupService) { }
 
   ngOnInit(): void {
   }

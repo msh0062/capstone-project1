@@ -11,6 +11,7 @@ import { CoachComponent } from './coach/coach.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewAllComponent } from './view-all/view-all.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     MainComponent,
     CoachComponent,
-    HomeComponent
+    HomeComponent,
+    ViewAllComponent
   ],
   imports: [
     BrowserModule,
