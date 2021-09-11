@@ -1,13 +1,13 @@
 ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   list-style-type: none;
   background-color: tan;
   height: 2.25em;
   margin-top: 1em;
   padding-top: 0em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
 }
 
 li > a {
@@ -15,4 +15,6 @@ li > a {
   text-decoration: none;
   display: inline;
   cursor: pointer;
+  padding-right: 1.45em;
+  padding-left: 1.45em;
 }
