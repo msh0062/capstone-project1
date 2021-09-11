@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClubsService } from '../services/clubs.service';
 
 @Component({
   selector: 'cr-home',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  allClubs;
+  errorMessage: string;
+
+  constructor(private clubsService: ClubsService) { }
+
+  getClubs(): void {
+    this.clubsService.getClubs()
+      .subscribe((res: any) => {
+        this.allClubs = res;
+        console.log(this.allClubs)
+  },
+  err => {this.errorMessage = err;
+  console.log(this.errorMessage);
+  });
+}
 
   ngOnInit(): void {
+    this.getClubs();
   }
 
 }
