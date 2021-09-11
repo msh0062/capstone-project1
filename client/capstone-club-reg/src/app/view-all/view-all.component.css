@@ -2,14 +2,14 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 25px;
-  width: 200px;
-  padding: 20px;
-  background-position: center;
-  background: lightgrey;
 }
 
 li {
+  border-radius: 25px;
+  width: 150px;
+  padding: 20px;
+  background-position: center;
+  background: lightgrey;
   list-style-type: none;
   color: black;
   font-size: larger;

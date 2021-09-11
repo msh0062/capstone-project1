@@ -2,3 +2,8 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+select {
+  display: flex;
+  align-items: center;
+}

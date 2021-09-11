@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Clubs } from '../models/clubs';
+import { Groups } from '../models/groups';
+import { Members } from '../models/members';
+import { ClubsService } from '../services/clubs.service';
 import { GroupService } from '../services/group.service';
+import { MemberService } from '../services/member.service';
 
 @Component({
   selector: 'cr-coach',
@@ -8,9 +13,68 @@ import { GroupService } from '../services/group.service';
 })
 export class CoachComponent implements OnInit {
 
-  constructor(private groups: GroupService) { }
+  allClubs;
+  allGroups;
+  allMembers;
+  errorMessage: string;
+  groups: Groups;
+  members: Members;
+  
+  constructor(private clubService: ClubsService ,private groupService: GroupService, private memberService: MemberService) { }
+
+  getClubs(): void {
+    this.clubService.getClubs()
+      .subscribe((res: any) => {
+        this.allClubs = res;
+        console.log(this.allClubs)
+  },
+  err => {this.errorMessage = err;
+  console.log(this.errorMessage);
+  });
+}
+
+  getGroups(): void {
+    this.groupService.getAllGroups()
+    .subscribe((res: any) => {
+      this.allGroups = res;
+      console.log(this.allGroups)
+    },
+    err => {this.errorMessage = err;
+    console.log(this.errorMessage);
+    });
+  }
+
+  getGroupsName(categoryName: string): void {
+    this.groupService.getGroupsByOrganizationId(categoryName)
+    .subscribe(group => {
+      this.allGroups = group
+    },
+      err => {this.errorMessage = err;
+    });
+  }
+
+  getMembersName(groupId: string, memberId): void {
+    this.memberService.getMember(groupId, memberId)
+    .subscribe( (member) => {
+      this.allMembers = member
+    },
+    err => {this.errorMessage = err;
+    });
+  }
+
+  displayClub(name): void {
+   this.getGroupsName(name);
+  }
+
+  displayGroups(name): void {
+  this.getGroupsName(name);
+  }
+
+
 
   ngOnInit(): void {
+    this.getClubs();
+    this.getGroups();
   }
 
 }

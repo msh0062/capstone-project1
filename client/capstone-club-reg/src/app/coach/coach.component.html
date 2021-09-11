@@ -1,1 +1,15 @@
 <h2>Welcome Coach! Here you can add, edit and delete teams and members below.</h2>
+<form >
+<select name="OrganizationName" id="OrganizationName" (change)="displayClub($event.target.value)">
+    <option  value="OrganizationName" selected>Select a Club</option>
+    <option *ngFor="let club of allClubs" value="{{ club.OrganizationId }}"> {{ club.OrganizationName }}</option>
+</select>
+<select name="GroupName" id="GroupName"  (change)="displayGroups($event.target.value)">
+    <option  value="GroupName" selected></option>
+    <option *ngFor="let groups of allGroups" value="{{ groups.GroupId }}"> {{ groups.GroupName }}</option>
+</select>
+<select name="MemberName" id="MemberName">
+    <label for="MemberName"></label>
+    <option *ngFor="let members of allMembers" value="{{ groups }}"> {{ groups.GroupName }}</option>
+</select>
+</form>

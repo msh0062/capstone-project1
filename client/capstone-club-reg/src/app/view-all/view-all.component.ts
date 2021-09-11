@@ -27,6 +27,8 @@ export class ViewAllComponent implements OnInit {
   err => {this.errorMessage = err;
   console.log(this.errorMessage);
   });
+
+  
 }
 
   ngOnInit(): void {

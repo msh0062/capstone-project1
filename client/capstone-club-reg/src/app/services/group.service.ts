@@ -9,7 +9,8 @@ import { group } from '@angular/animations';
 })
 export class GroupService {
 
-  allGroups = 'http://localhost:8082/api/groups/'
+  allGroups = 'http://localhost:8082/api/groups'
+  byOrg = 'http://localhost:8082/api/groups/byorganization'
 
 
   jsonContentTypeHeaders = {
@@ -21,13 +22,13 @@ export class GroupService {
     return results;
   }
 
-  getGroupById(groupId: number): Observable<Groups> {
+  getGroupById(groupId: string): Observable<Groups> {
   const results: Observable<Groups> = this.http.get<Groups>(`${this.allGroups}/${groupId}`);
   return results ;
   }
 
-  getGroupByName(groupName: string): Observable<Groups> {
-    const results: Observable<Groups> = this.http.get<Groups>(`${this.allGroups}/${groupName}`);
+  getGroupsByOrganizationId(OrganizationName:string): Observable<Groups> {
+    const results: Observable<Groups> = this.http.get<Groups>(`${this.byOrg}/${OrganizationName}`);
     return results ;
     }
 
