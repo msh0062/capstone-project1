@@ -13,19 +13,19 @@ export class HomeComponent implements OnInit {
 
   constructor(private clubsService: ClubsService) { }
 
-  getClubs(): void {
-    this.clubsService.getClubs()
-      .subscribe((res: any) => {
-        this.allClubs = res;
-        console.log(this.allClubs)
-  },
-  err => {this.errorMessage = err;
-  console.log(this.errorMessage);
-  });
-}
+//   getClubs(): void {
+//     this.clubsService.getClubs()
+//       .subscribe((res: any) => {
+//         this.allClubs = res;
+//         console.log(this.allClubs)
+//   },
+//   err => {this.errorMessage = err;
+//   console.log(this.errorMessage);
+//   });
+// }
 
   ngOnInit(): void {
-    this.getClubs();
+    // this.getClubs();
   }
 
 }

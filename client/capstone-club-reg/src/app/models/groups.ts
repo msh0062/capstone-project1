@@ -1,15 +1,15 @@
 export interface Groups {
-    groupId: number,
-    groupName: string,
-    organizationName: string,
-    sponsorName: string,
-    sponsorPhone: number,
-    sponsorEmail: string,
-    maxGroupSize: number,
-        members: [
+    GroupId: number,
+    GroupName: string,
+    OrganizationName: string,
+    SponsorName: string,
+    SponsorPhone: number,
+    SponsorEmail: string,
+    MaxGroupSize: number,
+        Members: [
             {
-                memberId: number,
-                memberEmail: string,
+                MemberId: number,
+                MemberEmail: string,
                 MemberName: string,
                 MemberPhone: number
             },
