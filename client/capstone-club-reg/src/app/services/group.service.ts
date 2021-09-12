@@ -37,10 +37,15 @@ export class GroupService {
     return results;
   }
 
-  // updateGroup(goal: Groups): Observable<Groups> {
-  //   const results: Observable<Groups> = this.http.put<Groups>(`${this.getAllGroups}/${.id}`, goal, this.jsonContentTypeHeaders);
-  //   return results;
-  // }
+  updateGroup(group: Groups): Observable<Groups> {
+    const results: Observable<Groups> = this.http.put<Groups>(`${this.getAllGroups}`, group, this.jsonContentTypeHeaders);
+    return results;
+  }
+
+  deleteGroupByID(groupId: string): Observable<Groups> {
+    const results = this.http.delete<Groups>(`${this.allGroups}/${groupId}`);
+    return results;
+  }
 
   constructor(private http: HttpClient) { }
 }

@@ -2,7 +2,7 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   list-style-type: none;
   background-color: tan;
   height: 2.25em;
@@ -13,13 +13,22 @@ ul {
 li > a {
   color: Black;
   text-decoration: none;
-  display: inline;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+li > input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   padding-right: 1.45em;
   padding-left: 1.45em;
+  width: 20%;
 }
 
-@media (max-width: 444px) {
+@media (max-width: 600px) {
   ul {
     height: auto;
     flex-direction: column;
@@ -33,5 +42,9 @@ li > a {
     padding-bottom: 0.25em;
     width: 100%;
     text-align: center;
+  }
+
+  li > input {
+    margin-right: 20em;
   }
 }
