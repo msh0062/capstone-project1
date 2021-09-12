@@ -15,6 +15,8 @@ import { ViewAllComponent } from './view-all/view-all.component';
 import { BoyRegComponent } from './boy-reg/boy-reg.component';
 import { GirlRegComponent } from './girl-reg/girl-reg.component';
 import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
+import { AddGroupComponent } from './add-group/add-group.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
     ViewAllComponent,
     BoyRegComponent,
     GirlRegComponent,
-    MixedRegComponent
+    MixedRegComponent,
+    AddGroupComponent,
+  
   ],
   imports: [
     BrowserModule,

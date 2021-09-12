@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Route } from '@angular/router';
+import { AddGroupComponent } from './add-group/add-group.component';
 import { BoyRegComponent } from './boy-reg/boy-reg.component';
 import { CoachComponent } from './coach/coach.component';
 import { GirlRegComponent } from './girl-reg/girl-reg.component';
@@ -21,7 +22,8 @@ const routes: Routes = [
       {path: 'boys', component: BoyRegComponent},
       {path: 'girls', component: GirlRegComponent},
       {path: 'mixed', component: MixedRegComponent},
-      {path: 'coach', component: CoachComponent}
+      {path: 'coach', component: CoachComponent},
+      {path: 'coach/addGroup', component: AddGroupComponent}
     ]
   }
 ];
