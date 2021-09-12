@@ -79,6 +79,10 @@ export class AddGroupComponent implements OnInit {
       };
     }
 
+    backButton() : void {
+      
+    }
+
   ngOnInit(): void {
     
   }
