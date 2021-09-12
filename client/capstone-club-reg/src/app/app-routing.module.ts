@@ -8,9 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
 import { ViewAllComponent } from './view-all/view-all.component';
 
-// const fallbackRoute: Route = {
-//   path: '**', component: HomeComponent
-// }
+const fallbackRoute: Route = {
+  path: '**', component: HomeComponent
+}
 
 const routes: Routes = [ 
   {
@@ -23,7 +23,8 @@ const routes: Routes = [
       {path: 'girls', component: GirlRegComponent},
       {path: 'mixed', component: MixedRegComponent},
       {path: 'coach', component: CoachComponent},
-      {path: 'coach/addGroup', component: AddGroupComponent}
+      {path: 'coach/addGroup', component: AddGroupComponent},
+      fallbackRoute
     ]
   }
 ];

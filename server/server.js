@@ -218,6 +218,26 @@ app.get("/api/groups/:groupid/members/:memberid", function (req, res) {
   res.end(JSON.stringify(match));
 });
 
+// GET MEMBERS IN A SPECIFIC GROUP
+app.get("/api/groups/:groupid/members", function (req, res) {
+  let groupId = req.params.groupid;
+  console.log("Received a GET request for member " + " in group " + groupId);
+
+  let data = fs.readFileSync(__dirname + "/data/groups.json", "utf8");
+  data = JSON.parse(data);
+
+  // find the group
+  let matchingGroup = data.find((element) => element.GroupId == groupId);
+  if (matchingGroup == null) {
+    res.status(404).send("Group Not Found");
+    return;
+  }
+
+  console.log("Returned data is: ");
+  console.log(matchingGroup.Members);
+  res.end(JSON.stringify(matchingGroup.Members));
+});
+
 // ADD A GROUP
 app.post("/api/groups", urlencodedParser, function (req, res) {
   console.log("Received a POST request to add a group");

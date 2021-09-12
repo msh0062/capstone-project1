@@ -154,5 +154,15 @@
         "SponsorEmail": "asdf@",
         "MaxGroupSize": 6,
         "Members": []
+    },
+    {
+        "GroupId": 16,
+        "GroupName": "test",
+        "OrganizationName": "test",
+        "SponsorName": "teset",
+        "SponsorPhone": "test",
+        "SponsorEmail": "test",
+        "MaxGroupSize": 2,
+        "Members": []
     }
 ]

@@ -1,103 +1,27 @@
 <h2>Welcome Coach! Here you can add, edit and delete teams and members below.</h2>
 <form>
-        <label for="OranizationName">Clubs:</label>
+    <label for="OranizationName">Clubs:</label>
         <select name="OrganizationName" id="OrganizationName" (change)="displayClub($event.target.value)" class='section0'>
             <option value="OrganizationName" selected>Select a Club</option>
             <option  *ngFor="let club of allClubs" value="{{ club.OrganizationId }}"> {{ club.OrganizationName }}</option>
         </select>
         <span></span>
     <label for="GroupName">Activities:</label>
-    <select  name="GroupName" id="GroupName" (change)="displayClub($event.target.value)" class='section1'>
+    <select  name="GroupName" id="GroupName" (change)="displayGroups($event.target.value)" class='section1'>
         <option value="GroupName" selected>Select Activity</option>
         <option *ngFor="let groups of allGroups" value="{{ groups.GroupId }}"> {{ groups.GroupName }}</option>
     </select>
-
-<!-- <label for="MemberName">Members:</label>
-<select name="MemberName" id="MemberName" class='dropdown'>
-    <label for="MemberName"></label>
-    <option *ngFor="let members of allMembers" value="{{ groups }}"> {{ groups.GroupName }}</option>
-</select> -->
-</form>
-<section class="buttons">
-    <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
-    <button class="button">Edit a Group</button>
-    <button class="button">Delete a Group</button>
-</section>
-
-<!-- <div style="width: 400px; margin: auto;">
-    <div class="submit-form">
-      <div *ngIf="!submitted">
-        <div class="form-group">
-          <label for="GroupName">GroupName</label>
-          <input
-            type="text"
-            class="form-control"
-            id="GroupName"
-            required
-            [(ngModel)]="group.GroupName"
-            name="GroupName"
-          />
-        </div>
-  
-        <div class="form-group">
-          <label for="OrganizationName">OrganizationName</label>
-          <input
-            class="form-control"
-            id="OrganizationName"
-            required
-            [(ngModel)]="group.OrganizationName"
-            name="OrganizationName"
-          />
-        </div>
-
-        <div class="form-group">
-            <label for="SponsorName">SponsorName</label>
-            <input
-              class="form-control"
-              id="SponsorName"
-              required
-              [(ngModel)]="group.SponsorName"
-              name="SponsorName"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="SponsorPhone">SponsorPhone</label>
-            <input
-              class="form-control"
-              id="SponsorPhone"
-              required
-              [(ngModel)]="group.SponsorPhone"
-              name="SponsorPhone"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="SponsorEmail">SponsorEmail</label>
-            <input
-              class="form-control"
-              id="SponsorEmail"
-              required
-              [(ngModel)]="group.SponsorEmail"
-              name="SponsorEmail"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="MaxGroupSize">MaxGroupSize</label>
-            <input
-              class="form-control"
-              id="MaxGroupSize"
-              required
-              [(ngModel)]="group.MaxGroupSize"
-              name="MaxGroupSize"
-            />
-          </div>
-  
-        <button (click)="saveGroup()" class="btn btn-success">Submit</button>
-      </div>
-
-      <div *ngIf="submitted">
-        <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="addNew()">Add</button>
-      </div> -->
+        <span></span>
+    <label for="MemberName">Members:</label>
+    <select name="MemberName" id="MemberName" (change)="displayMember($event.target.value)" class='dropdown'>
+        <label for="MemberName"></label>
+        <option value="GroupName" selected>Select Member</option>
+        <option *ngFor="let members of allMembers" value="{{ members.MemberId }}"> {{ members.MemberName }}</option>
+    </select>
+        </form>
+        
+    <section class="buttons">
+        <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
+        <button class="button">Edit a Group</button>
+        <button class="button">Delete a Group</button>
+    </section>

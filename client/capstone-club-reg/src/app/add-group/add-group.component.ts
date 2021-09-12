@@ -28,7 +28,10 @@ export class AddGroupComponent implements OnInit {
   submitted = false;
 
   constructor(private fb: FormBuilder, private groupService: GroupService) {
+    // this.createForm();
+   }
 
+   createForm(): void {
     this.addForm = this.fb.group({
       GroupName: ['', Validators.required],
       OrganizationName: ['', Validators.required],
@@ -38,7 +41,6 @@ export class AddGroupComponent implements OnInit {
       MaxGroupSize: ['', Validators.required],
     });
    }
-
 
   saveGroup(): void {
     const data = {

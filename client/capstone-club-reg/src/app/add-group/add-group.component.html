@@ -1,4 +1,4 @@
-<div style="width: 400px; margin: auto;">
+ <div style="width: 400px; margin: auto;">
     <div class="submit-form">
       <div *ngIf="!submitted">
         <div class="form-group">
@@ -74,4 +74,33 @@
       <div *ngIf="submitted">
         <h4>You submitted successfully!</h4>
         <button class="btn btn-success" (click)="addNew()">Add ANother Activity</button>
-      </div>
+      </div> 
+      
+      <!-- <form [formGroup]="addForm" (ngSubmit)="saveGroup()">
+
+        <label>
+            Group Name:
+          <input type="text" formControlName="GroupName">
+        </label>
+      <label>
+        Club Name:
+          <input type="text" formControlName="OrganizationName">
+        </label>
+      <label>
+          Sponsor Name:
+          <input type="text" formControlName="SponsorName">
+        </label>
+        <label>
+            Sponsor Phone:
+            <input type="text" formControlName="SponsorPhone">
+        </label>
+        <label>
+            SponsorEmail:
+            <input type="text" formControlName="SponsorEmail">
+        </label>
+        <label>
+            Max Group Size:
+            <input type="text" formControlName="MaxGroupSize">
+        </label>
+      <button type="submit">Submit Application</button>
+      </form> -->

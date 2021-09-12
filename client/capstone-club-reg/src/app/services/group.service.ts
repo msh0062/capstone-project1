@@ -12,7 +12,6 @@ export class GroupService {
   allGroups = 'http://localhost:8082/api/groups'
   byOrg = 'http://localhost:8082/api/groups/byorganization'
 
-
   jsonContentTypeHeaders = {
     headers: new HttpHeaders().set('Content-Type', 'application/json')  
   }
@@ -44,6 +43,11 @@ export class GroupService {
 
   deleteGroupByID(groupId: string): Observable<Groups> {
     const results = this.http.delete<Groups>(`${this.allGroups}/${groupId}`);
+    return results;
+  }
+
+  getSpecificMembersByGroupId(groupId: string): Observable<Groups> {
+    const results = this.http.get<Groups>(`${this.allGroups}/${groupId}/members`);
     return results;
   }
 

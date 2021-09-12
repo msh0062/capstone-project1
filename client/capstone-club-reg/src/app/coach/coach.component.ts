@@ -19,60 +19,10 @@ export class CoachComponent implements OnInit {
   errorMessage: string;
   groups: Groups;
   members: Members;
-  
-  // group = {
-  //   GroupId:'',
-  //   GroupName: '',
-  //   OrganizationName: '',
-  //   SponsorName: '',
-  //   SponsorPhone: '',
-  //   SponsorEmail: '',
-  //   MaxGroupSize: '',
-  //   Members: [],
-  //   published: false
-  // };
-  // submitted = false;
 
   constructor(private clubService: ClubsService ,private groupService: GroupService, private memberService: MemberService) { }
 
-  // saveGroup(): void {
-  //   const data = {
-  //     GroupId: this.group.GroupId,
-  //     GroupName: this.group.GroupName,
-  //     OrganizationName: this.group.OrganizationName,
-  //     SponsorName: this.group.SponsorName,
-  //     SponsorPhone: this.group.SponsorPhone,
-  //     SponsorEmail: this.group.SponsorEmail,
-  //     MaxGroupSize: this.group.MaxGroupSize,
-  //     Members: this.group.Members
-  //   }
-  //   this.groupService.addGroup(data)
-  //     .subscribe( 
-  //       res => {
-  //       console.log(res)
-  //       this.submitted = true;
-  //     }, 
-  //     err => {this.errorMessage = err;
-  //       console.log(this.errorMessage);
-  //     });
-  //   }
-
-  //   addNew(): void {
-  //     this.submitted = false;
-  //     this.group = {
-  //       GroupId:'',
-  //       GroupName: '',
-  //       OrganizationName: '',
-  //       SponsorName: '',
-  //       SponsorPhone: '',
-  //       SponsorEmail: '',
-  //       MaxGroupSize: '',
-  //       Members: [],
-  //       published: false
-  //     };
-  //   }
-
-  getClubs(): void {
+   getClubs(): void {
     this.clubService.getClubs()
       .subscribe((res: any) => {
         this.allClubs = res;
@@ -103,8 +53,8 @@ export class CoachComponent implements OnInit {
     });
   }
 
-  getMembersName(groupId: string, memberId): void {
-    this.memberService.getMember(groupId, memberId)
+  getMembers(groupId: string): void {
+    this.groupService.getSpecificMembersByGroupId(groupId)
     .subscribe( (member) => {
       this.allMembers = member
     },
@@ -112,27 +62,31 @@ export class CoachComponent implements OnInit {
     });
   }
 
-  insertGroup(group: Groups): void {
-    this.groupService.addGroup(group)
-      .subscribe(group => {
-        this.groupService.getAllGroups();
-      },
-      (error) => console.log(error))
-  }
+  // insertGroup(group: Groups): void {
+  //   this.groupService.addGroup(group)
+  //     .subscribe(group => {
+  //       this.groupService.getAllGroups();
+  //     },
+  //     (error) => console.log(error))
+  // }
 
   displayClub(name): void {
    this.getGroupsName(name);
   }
 
   displayGroups(name): void {
-  this.getGroupsName(name);
+  this.getMembers(name);
+  }
+
+  displayMember(id):void {
+    // this.getMembers(id);
   }
 
 
 
   ngOnInit(): void {
     this.getClubs();
-    this.getGroups();
+    
   }
 
 }
