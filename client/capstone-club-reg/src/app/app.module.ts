@@ -16,6 +16,7 @@ import { BoyRegComponent } from './boy-reg/boy-reg.component';
 import { GirlRegComponent } from './girl-reg/girl-reg.component';
 import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
 import { AddGroupComponent } from './add-group/add-group.component';
+import { ViewListComponent } from './view-list/view-list.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AddGroupComponent } from './add-group/add-group.component';
     GirlRegComponent,
     MixedRegComponent,
     AddGroupComponent,
+    ViewListComponent,
   
   ],
   imports: [

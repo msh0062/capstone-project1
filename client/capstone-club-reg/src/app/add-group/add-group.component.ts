@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GroupService } from '../services/group.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { GroupService } from '../services/group.service';
 })
 export class AddGroupComponent implements OnInit {
 
+  addForm: FormGroup;
+
   errorMessage: string;
+
 
   group = {
     GroupId:'',
@@ -23,7 +27,18 @@ export class AddGroupComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private fb: FormBuilder, private groupService: GroupService) {
+
+    this.addForm = this.fb.group({
+      GroupName: ['', Validators.required],
+      OrganizationName: ['', Validators.required],
+      SponsorName: ['', Validators.required],
+      SponsorPhone: ['', Validators.required],
+      SponsorEmail: ['', Validators.required, Validators.email],
+      MaxGroupSize: ['', Validators.required],
+    });
+   }
+
 
   saveGroup(): void {
     const data = {
@@ -63,6 +78,7 @@ export class AddGroupComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    
   }
 
 }

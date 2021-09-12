@@ -1,11 +1,8 @@
 <section>
     <ul>
-        <!-- <li *ngFor="let club of allClubs" class="list">
-            <a routerLink="{{club.OrganizationName}}" routerLinkActive= "active"> {{club.OrganizationName}} </a>
-            <p>{{club.OrganizationName}}</p> 
-        </li> -->
-        <li *ngFor="let group of allGroups"> 
-            {{group.GroupName}}
+        <li *ngFor="let club of allClubs"> 
+            {{club.OrganizationName}}
+            <cr-view-list [organizationId]="club.OrganizationId"></cr-view-list>
         </li>
     </ul>
 </section>

@@ -15,8 +15,19 @@ export class ViewAllComponent implements OnInit {
   errorMessage: string;
   group: Groups;
   allGroups;
+  allClubs;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private groupService: GroupService, private clubService: ClubsService) { }
+
+getClubs(): void {
+  this.clubService.getClubs()
+    .subscribe((res: any)  => {
+      this.allClubs = res;
+    },
+    err => {this.errorMessage = err;
+      console.log(this.errorMessage);
+      });
+}
 
   getGroups(): void {
     this.groupService.getAllGroups()
@@ -32,7 +43,7 @@ export class ViewAllComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    this.getGroups();
-  }
+    this.getClubs();
+      }
 
 }

@@ -6,8 +6,8 @@
             <option  *ngFor="let club of allClubs" value="{{ club.OrganizationId }}"> {{ club.OrganizationName }}</option>
         </select>
         <span></span>
-    <label for="GroupName">Activites:</label>
-    <select  name="GroupName" id="GroupName" class='section1'>
+    <label for="GroupName">Activities:</label>
+    <select  name="GroupName" id="GroupName" (change)="displayClub($event.target.value)" class='section1'>
         <option value="GroupName" selected>Select Activity</option>
         <option *ngFor="let groups of allGroups" value="{{ groups.GroupId }}"> {{ groups.GroupName }}</option>
     </select>
