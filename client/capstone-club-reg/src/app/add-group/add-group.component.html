@@ -1,8 +1,8 @@
- <div style="width: 400px; margin: auto;">
+ <!-- <div style="width: 400px; margin: auto;">
     <div class="submit-form">
       <div *ngIf="!submitted">
         <div class="form-group">
-          <label for="GroupName">GroupName</label>
+          <label for="GroupName">Activity Name:</label>
           <input
             type="text"
             class="form-control"
@@ -14,7 +14,7 @@
         </div>
   
         <div class="form-group">
-          <label for="OrganizationName">OrganizationName</label>
+          <label for="OrganizationName">Club Name(Boys, Girls, Mixed):</label>
           <input
             class="form-control"
             id="OrganizationName"
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            <label for="SponsorName">SponsorName</label>
+            <label for="SponsorName">Sponsor Name:</label>
             <input
               class="form-control"
               id="SponsorName"
@@ -36,7 +36,7 @@
           </div>
 
           <div class="form-group">
-            <label for="SponsorPhone">SponsorPhone</label>
+            <label for="SponsorPhone">SponsorPhone:</label>
             <input
               class="form-control"
               id="SponsorPhone"
@@ -75,33 +75,36 @@
       <div *ngIf="submitted">
         <h4>You submitted successfully!</h4>
         <button class="btn btn-success" (click)="addNew()">Add Another Activity</button>
-      </div> 
-      
-      <!-- <form [formGroup]="addForm" (ngSubmit)="saveGroup()">
+      </div>  -->
+   
 
-        <label>
-            Group Name:
-          <input type="text" formControlName="GroupName">
-        </label>
-      <label>
-        Club Name:
-          <input type="text" formControlName="OrganizationName">
-        </label>
-      <label>
-          Sponsor Name:
-          <input type="text" formControlName="SponsorName">
-        </label>
-        <label>
-            Sponsor Phone:
-            <input type="text" formControlName="SponsorPhone">
-        </label>
-        <label>
-            SponsorEmail:
-            <input type="text" formControlName="SponsorEmail">
-        </label>
-        <label>
-            Max Group Size:
-            <input type="text" formControlName="MaxGroupSize">
-        </label>
-      <button type="submit">Submit Application</button>
-      </form> -->
+       <form [formGroup]="addForm" (ngSubmit)='onSubmit(addForm.value)'>
+
+        <label for="GroupName">Activity Name: </label>
+        <input id="GroupName" type="text" formControlName="GroupName">
+      
+        <label for="OrganizationName">Club Name: (Boys, Girls, Mixed)</label>
+        <input id="OrganizationName" type="text" formControlName="OrganizationName">
+
+        <label for="SponsorName">Sponsor Name: </label>
+        <input id="SponsorName" type="text" formControlName="SponsorName">
+
+        <label for="SponsorPhone">Sponsor Phone: </label>
+        <input id="SponsorPhone" type="tel" formControlName="SponsorPhone">
+
+        <label for="SponsorEmail">Sponsor Email: </label>
+        <input id="SponsorEmail" type="email" formControlName="SponsorEmail">
+
+        <label for="MaxGroupSize">MaxGroupSize: </label>
+        <input id="MaxGroupSize" type="number" formControlName="MaxGroupSize">
+      
+        <!-- <button (click)="onSubmit()" class="btn btn-success">Submit</button> -->
+        <input type="submit" id="add-activty" value="Submit">
+        <button class="back" [routerLink]="['', 'coach']">Back</button>
+      </form>
+      
+
+      <!-- <div *ngIf="submitted">
+        <h4>You submitted successfully!</h4>
+        <button class="btn btn-success" (click)="addNew()">Add Another Activity</button>
+      </div>   -->

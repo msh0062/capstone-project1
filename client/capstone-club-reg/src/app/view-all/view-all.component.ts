@@ -37,9 +37,18 @@ getClubs(): void {
   },
   err => {this.errorMessage = err;
   console.log(this.errorMessage);
-  });
+  });  
+}
 
-  
+getMembers() {
+  this.groupService.getAllGroups()
+  .subscribe((res: any) => {
+    this.allGroups = res;
+    console.log(this.allGroups)
+},
+err => {this.errorMessage = err;
+console.log(this.errorMessage);
+});  
 }
 
   ngOnInit(): void {

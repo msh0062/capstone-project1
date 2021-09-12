@@ -1,5 +1,6 @@
 <h2>Welcome Coach! Here you can add, edit and delete teams and members below.</h2>
-<form>
+<!-- TODO Add Authorization Log In -->
+<section>
     <label for="OranizationName">Clubs:</label>
         <select name="OrganizationName" id="OrganizationName" (change)="displayClub($event.target.value)" class='section0'>
             <option value="OrganizationName" selected>Select a Club</option>
@@ -18,10 +19,9 @@
         <option value="GroupName" selected>Select Member</option>
         <option *ngFor="let members of allMembers" value="{{ members.MemberId }}"> {{ members.MemberName }}</option>
     </select>
-        </form>
-        
+        </section>
     <section class="buttons">
         <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
-        <button class="button">Edit a Group</button>
-        <button class="button">Delete a Group</button>
+        <button class="button" [routerLink]="['editGroup']">Edit an Activity</button>
+        <!-- <button class="button">Delete a Group</button> -->
     </section>

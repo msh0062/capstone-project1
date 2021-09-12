@@ -3,6 +3,7 @@ import { RouterModule, Routes, Route } from '@angular/router';
 import { AddGroupComponent } from './add-group/add-group.component';
 import { BoyRegComponent } from './boy-reg/boy-reg.component';
 import { CoachComponent } from './coach/coach.component';
+import { EditActivityComponent } from './edit-activity/edit-activity.component';
 import { GirlRegComponent } from './girl-reg/girl-reg.component';
 import { HomeComponent } from './home/home.component';
 import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
       {path: 'mixed', component: MixedRegComponent},
       {path: 'coach', component: CoachComponent},
       {path: 'coach/addGroup', component: AddGroupComponent},
+      {path: 'coach/editGroup', component: EditActivityComponent},
       fallbackRoute
     ]
   }

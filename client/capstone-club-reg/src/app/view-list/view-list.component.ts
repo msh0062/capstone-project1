@@ -12,7 +12,8 @@ export class ViewListComponent implements OnInit {
   @Input() organizationId: string;
   groups: Groups[];
   errorMessage: string;
-
+  
+// TODO add null message
   getGroupsByOrganization(organizationId: string): void {
     if (organizationId == null) {
     } 
