@@ -5,8 +5,8 @@ export interface Groups {
     GroupName: string,
     OrganizationName: string,
     SponsorName: string,
-    SponsorPhone: number,
+    SponsorPhone: string,
     SponsorEmail: string,
-    MaxGroupSize: number,
+    MaxGroupSize: string,
     Members: Members[]
 }

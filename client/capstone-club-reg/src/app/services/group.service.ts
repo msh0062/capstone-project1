@@ -32,8 +32,8 @@ export class GroupService {
     return results ;
     }
 
-  addGroup(groupName: Groups): Observable<Groups> {
-    const results: Observable<Groups> = this.http.post<Groups>(this.allGroups, groupName, this.jsonContentTypeHeaders);
+  addGroup(groups: Groups): Observable<Groups> {
+    const results: Observable<Groups> = this.http.post<Groups>(this.allGroups, groups, this.jsonContentTypeHeaders);
     return results;
   }
 
