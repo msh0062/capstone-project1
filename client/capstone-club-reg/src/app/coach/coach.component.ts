@@ -62,6 +62,16 @@ export class CoachComponent implements OnInit {
     });
   }
 
+  deleteMember(groupId: string): void {
+    this.groupService.deleteGroupByID(groupId)
+      .subscribe(group => {
+        this.allGroups = group;
+      },
+      err => {
+        this.errorMessage =err;
+      })
+  }
+
   // insertGroup(group: Groups): void {
   //   this.groupService.addGroup(group)
   //     .subscribe(group => {

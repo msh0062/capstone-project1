@@ -6,16 +6,23 @@
             <option value="OrganizationName" selected>Select a Club</option>
             <option  *ngFor="let club of allClubs" value="{{ club.OrganizationId }}"> {{ club.OrganizationName }}</option>
         </select>
+</section>
+
+<section>
         <span></span>
     <label for="GroupName">Activities:</label>
+
     <select  name="GroupName" id="GroupName" (change)="displayGroups($event.target.value)" class='section1'>
         <option value="GroupName" selected>Select Activity</option>
         <option *ngFor="let groups of allGroups" value="{{ groups.GroupId }}"> {{ groups.GroupName }}</option>
     </select>
     <span></span>
     <input type="button" id="edit-activity" value="edit">
-    <input type="button" id="delete-activity" value="Delete">
+    <input type="button" id="delete-activity" value="Delete" ng-click="deleteMember(groups.GroupId)">
         <span></span>
+</section>
+
+<section>
     <label for="MemberName">Members:</label>
     <select name="MemberName" id="MemberName" (change)="displayMember($event.target.value)" class='dropdown'>
         <label for="MemberName"></label>
@@ -27,8 +34,9 @@
     <input type="button" id="delete-member" value="Delete">
 </section>
 
-    <section class="buttons">
-        <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
-        <button class="button" [routerLink]="['editGroup']">Edit an Activity</button>
-        <!-- <button class="button">Delete a Group</button> -->
-    </section>
+<section class="buttons">
+    <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
+    <button class="button" [routerLink]="['addMember']">Add Member</button>
+    <button class="button" [routerLink]="['editGroup']">Edit an Activity</button>
+    <!-- <button class="button">Delete a Group</button> -->
+</section>

@@ -19,6 +19,7 @@ import { AddGroupComponent } from './add-group/add-group.component';
 import { ViewListComponent } from './view-list/view-list.component';
 import { DeleteGroupComponent } from './delete-group/delete-group.component';
 import { EditActivityComponent } from './edit-activity/edit-activity.component';
+import { AddMemberComponent } from './add-member/add-member.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { EditActivityComponent } from './edit-activity/edit-activity.component';
     ViewListComponent,
     DeleteGroupComponent,
     EditActivityComponent,
+    AddMemberComponent,
   
   ],
   imports: [

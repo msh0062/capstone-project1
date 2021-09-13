@@ -1,0 +1,12 @@
+<form [formGroup]="memberForm" (ngSubmit)="onSubmit(memberForm.value)">
+    <label for="MemberName">Kid Name</label>
+    <input type="text" id="memberName" formControlName="MemberName">
+    <label for="MemberEmail"> Email</label>
+    <input type="email" id="contactEmail" formControlName="MemberEmail">
+    <label for="MemberPhone"> Phone</label>
+    <input type="tel" id="contactPhone" formControlName="MemberPhone">
+
+    
+    <input type="submit" id="register-member" value="Save Kid">
+    <input type="button" id="back-button" [routerLink]="['', 'coach']" value="Back">
+</form>

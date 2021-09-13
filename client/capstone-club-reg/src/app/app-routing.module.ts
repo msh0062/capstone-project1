@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Route } from '@angular/router';
 import { AddGroupComponent } from './add-group/add-group.component';
+import { AddMemberComponent } from './add-member/add-member.component';
 import { BoyRegComponent } from './boy-reg/boy-reg.component';
 import { CoachComponent } from './coach/coach.component';
 import { EditActivityComponent } from './edit-activity/edit-activity.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
       {path: 'coach', component: CoachComponent},
       {path: 'coach/addGroup', component: AddGroupComponent},
       {path: 'coach/editGroup', component: EditActivityComponent},
+      {path: 'coach/addMember', component: AddMemberComponent},
       fallbackRoute
     ]
   }

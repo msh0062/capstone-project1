@@ -14,12 +14,12 @@ export class MemberService {
   }
 
   allGroups = 'http://localhost:8082/api/groups'
-  memberId = 'http://localhost:8082/api/groups/:groupid/members/:memberid'
+  //memberId = 'http://localhost:8082/api/groups/:groupid/members/:memberid'
 
 
-  getMember(groupId:string, memberId: string): Observable<Members> {
-    const results: Observable<Members> = this.http.get<Members>(`${this.allGroups}/${groupId}/members/${memberId}`);
-    return results ;
+  addMember(groupId:number, member: Members): Observable<Members> {
+    const results: Observable<Members> = this.http.post<Members>(`${this.allGroups}/${groupId}/members`, member, this.jsonContentTypeHeaders);
+    return results;
     }
 
   constructor(private http: HttpClient) { }
