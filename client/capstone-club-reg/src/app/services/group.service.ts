@@ -45,8 +45,9 @@ export class GroupService {
     return results;
   }
 
-  deleteGroupByID(groupId: string): Observable<Groups> {
+  deleteGroupById(groupId: string): Observable<Groups> {
     const results = this.http.delete<Groups>(`${this.allGroups}/${groupId}`);
+    console.log(results);
     return results;
   }
 

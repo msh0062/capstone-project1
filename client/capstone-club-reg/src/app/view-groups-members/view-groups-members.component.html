@@ -3,14 +3,17 @@
         <tr *ngFor='let group of allGroups'>
             <td>GroupID : {{ group.GroupId }}</td>
             <td>Group Name: {{ group.GroupName }}</td>
-            <td> Sponsor Name: {{ group.SponsorName }}</td>
-            <td> Sponsor Phone: {{ group.SponsorPhone }}</td>
-            <td> Sponsor Email: {{ group.SponsorEmail }}</td>
+            <td> Coach Name: {{ group.SponsorName }}</td>
+            <td> Coach Phone: {{ group.SponsorPhone }}</td>
+            <td> Coach Email: {{ group.SponsorEmail }}</td>
             <td> Max Group Size :{{ group.MaxGroupSize }}</td>
+            <button class="button" (click)="deleteRow(group.GroupId)">Delete Member</button>
         </tr>
     </ul>
-    <button class="button" [routerLink]="['', 'coach']">Back</button>
+    <button  [routerLink]="['', 'coach']">Back</button>
    </section>
+
+<!-- TODO get all members -->
 
 <section>
     <ul>

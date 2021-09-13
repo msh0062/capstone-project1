@@ -16,12 +16,25 @@ allGroups;
 allMembers;
 errorMessage: string;
 group: Groups;
+data;
 
   getGroups(): void {
     this.groupService.getAllGroups()
       .subscribe((res: any) => {
         this.allGroups = res;
         console.log(this.allGroups)
+  },
+  err => {this.errorMessage = err;
+  console.log(this.errorMessage);
+  });  
+}
+
+deleteRow(id){
+  this.groupService.deleteGroupById(id)
+      .subscribe((res: any) => {
+      console.log(id)
+        this.data = res;
+      console.log(this.data)
   },
   err => {this.errorMessage = err;
   console.log(this.errorMessage);

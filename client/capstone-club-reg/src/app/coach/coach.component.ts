@@ -63,7 +63,7 @@ export class CoachComponent implements OnInit {
   }
 
   deleteMember(groupId: string): void {
-    this.groupService.deleteGroupByID(groupId)
+    this.groupService.deleteGroupById(groupId)
       .subscribe(group => {
         this.allGroups = group;
       },
