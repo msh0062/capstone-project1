@@ -1,1 +1,7 @@
-<p>edit-activity works!</p>
+<form [formGroup]="seeAllGroupsInfo" (ngSubmit)='onSubmit(seeAllGroupsInfo.value)'>
+
+    <label for="GroupName">Activity Name: </label>
+    <input id="GroupName" type="text" formControlName="GroupName">
+
+    <input class="button" type="submit" id="add-activty" value="Submit">
+</form>

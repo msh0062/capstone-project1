@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Clubs } from '../models/clubs';
 
 @Injectable({
@@ -8,6 +8,11 @@ import { Clubs } from '../models/clubs';
 })
 
 export class ClubsService {
+
+  allRaces;
+  data = new BehaviorSubject<Clubs>({} as any);
+  currentData = this.data.asObservable();
+  private subject = new Subject<any>()
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +31,13 @@ export class ClubsService {
     return results;
   }
 
-  
+  getSelectedClub(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
+  sendSelectedClub(data): void {
+    this.data.next(data);
+  }
 
 
 

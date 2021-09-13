@@ -1,91 +1,16 @@
- <!-- <div style="width: 400px; margin: auto;">
-    <div class="submit-form">
-      <div *ngIf="!submitted">
-        <div class="form-group">
-          <label for="GroupName">Activity Name:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="GroupName"
-            required
-            [(ngModel)]="group.GroupName"
-            name="GroupName"
-          />
-        </div>
-  
-        <div class="form-group">
-          <label for="OrganizationName">Club Name(Boys, Girls, Mixed):</label>
-          <input
-            class="form-control"
-            id="OrganizationName"
-            required
-            [(ngModel)]="group.OrganizationName"
-            name="OrganizationName"
-          />
-        </div>
-
-        <div class="form-group">
-            <label for="SponsorName">Sponsor Name:</label>
-            <input
-              class="form-control"
-              id="SponsorName"
-              required
-              [(ngModel)]="group.SponsorName"
-              name="SponsorName"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="SponsorPhone">SponsorPhone:</label>
-            <input
-              class="form-control"
-              id="SponsorPhone"
-              required
-              [(ngModel)]="group.SponsorPhone"
-              name="SponsorPhone"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="SponsorEmail">SponsorEmail</label>
-            <input
-              class="form-control"
-              id="SponsorEmail"
-              required
-              [(ngModel)]="group.SponsorEmail"
-              name="SponsorEmail"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="MaxGroupSize">MaxGroupSize</label>
-            <input
-              class="form-control"
-              id="MaxGroupSize"
-              required
-              [(ngModel)]="group.MaxGroupSize"
-              name="MaxGroupSize"
-            />
-          </div>
-  
-        <button (click)="saveGroup()" class="btn btn-success">Submit</button>
-        <button class="back" [routerLink]="['', 'coach']">Back</button>
-      </div>
-
-      <div *ngIf="submitted">
-        <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="addNew()">Add Another Activity</button>
-      </div>  -->
-   
 
        <form [formGroup]="addForm" (ngSubmit)='onSubmit(addForm.value)'>
 
         <label for="GroupName">Activity Name: </label>
         <input id="GroupName" type="text" formControlName="GroupName">
       
-        <label for="OrganizationName">Club Name: (Boys, Girls, Mixed)</label>
-        <input id="OrganizationName" type="text" formControlName="OrganizationName">
-
+        <label for="OrganizationName">Club Name: </label>
+        <select name="OrganizationName" id="OrganizationName"  formControlName="OrganizationName">
+          <option value="Boys">Boys</option>
+          <option value="Girls">Girls</option>
+          <option value="Mixed">Mixed</option>
+        </select>
+       
         <label for="SponsorName">Sponsor Name: </label>
         <input id="SponsorName" type="text" formControlName="SponsorName">
 
@@ -95,25 +20,9 @@
         <label for="SponsorEmail">Sponsor Email: </label>
         <input id="SponsorEmail" type="email" formControlName="SponsorEmail">
 
-        <label for="MaxGroupSize">MaxGroupSize: </label>
+        <label  for="MaxGroupSize">MaxGroupSize: </label>
         <input id="MaxGroupSize" type="number" formControlName="MaxGroupSize">
-        <!-- TODO ADD MEMBERS -->
-        <!-- <label for="MemberEmail">MemberEmail: </label>
-        <input id="MemberEmail" type="text" formControlName="MemberEmail">
 
-        <label for="MemberName">MemberName: </label>
-        <input id="MemberName" type="text" formControlName="MemberName">
-
-        <label for="MemberPhone">MemberPhone: </label>
-        <input id="MemberPhone" type="text" formControlName="MemberPhone"> -->
-      
-        <!-- <button (click)="onSubmit()" class="btn btn-success">Submit</button> -->
-        <input type="submit" id="add-activty" value="Submit">
-        <button class="back" [routerLink]="['', 'coach']">Back</button>
+        <input class="button" type="submit" id="add-activty" value="Submit">
+        <button class="button" [routerLink]="['', 'coach']">Back</button>
       </form>
-      
-
-      <!-- <div *ngIf="submitted">
-        <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="addNew()">Add Another Activity</button>
-      </div>   -->

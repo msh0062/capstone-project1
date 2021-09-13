@@ -1,0 +1,24 @@
+<section>
+    <ul>
+        <tr *ngFor='let group of allGroups'>
+            <td>GroupID : {{ group.GroupId }}</td>
+            <td>Group Name: {{ group.GroupName }}</td>
+            <td> Sponsor Name: {{ group.SponsorName }}</td>
+            <td> Sponsor Phone: {{ group.SponsorPhone }}</td>
+            <td> Sponsor Email: {{ group.SponsorEmail }}</td>
+            <td> Max Group Size :{{ group.MaxGroupSize }}</td>
+        </tr>
+    </ul>
+</section>
+
+<section>
+    <ul>
+        <tr *ngFor='let member of allMembers'>
+            <td>{{ group.Members }}</td>
+            <!-- <td>{{ group.MemberName }}</td>
+            <td>{{ group.MemberPhone }}</td>
+            <td>{{ group.MemberEmail }}</td> -->
+            <td></td>
+        </tr>
+    </ul>
+</section>

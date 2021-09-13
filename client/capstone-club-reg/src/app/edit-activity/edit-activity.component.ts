@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Groups } from '../models/groups';
 import { GroupService } from '../services/group.service';
 
 @Component({
@@ -8,9 +10,15 @@ import { GroupService } from '../services/group.service';
 })
 export class EditActivityComponent implements OnInit {
 
+  seeAllGroupsInfo: FormGroup;
   errorMessage: string;
+  groups: Groups;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private groupService: GroupService, private fb: FormBuilder) { 
+    this.seeAllGroupsInfo = this.fb.group({
+      GroupName: ['', Validators.required],
+    })
+  }
 
   getGroups(): void {
     this.groupService.getAllGroups()
@@ -25,6 +33,10 @@ export class EditActivityComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  onSubmit(groups: Groups):void {
+    this.groupService.getAllGroups().subscribe();
   }
 
 }

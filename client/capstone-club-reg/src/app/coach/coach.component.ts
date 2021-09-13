@@ -72,14 +72,6 @@ export class CoachComponent implements OnInit {
       })
   }
 
-  // insertGroup(group: Groups): void {
-  //   this.groupService.addGroup(group)
-  //     .subscribe(group => {
-  //       this.groupService.getAllGroups();
-  //     },
-  //     (error) => console.log(error))
-  // }
-
   displayClub(name): void {
    this.getGroupsName(name);
   }
@@ -92,6 +84,10 @@ export class CoachComponent implements OnInit {
     // this.getMembers(id);
   }
 
+  addMember(groupId): void {
+    this.groupService.sendGroup(groupId);
+    console.log(groupId)
+  }
 
 
   ngOnInit(): void {

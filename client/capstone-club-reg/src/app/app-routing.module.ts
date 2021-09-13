@@ -9,6 +9,7 @@ import { GirlRegComponent } from './girl-reg/girl-reg.component';
 import { HomeComponent } from './home/home.component';
 import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { ViewGroupsMembersComponent } from './view-groups-members/view-groups-members.component';
 
 const fallbackRoute: Route = {
   path: '**', component: HomeComponent
@@ -28,6 +29,7 @@ const routes: Routes = [
       {path: 'coach/addGroup', component: AddGroupComponent},
       {path: 'coach/editGroup', component: EditActivityComponent},
       {path: 'coach/addMember', component: AddMemberComponent},
+      {path: 'coach/viewAll', component: ViewGroupsMembersComponent},
       fallbackRoute
     ]
   }

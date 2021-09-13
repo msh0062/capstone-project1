@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Groups } from '../models/groups';
-import { group } from '@angular/animations';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,10 @@ export class GroupService {
 
   allGroups = 'http://localhost:8082/api/groups'
   byOrg = 'http://localhost:8082/api/groups/byorganization'
+
+  private subject = new Subject<any>()
+  data = new BehaviorSubject<Groups>({} as any);
+  currentData = this.data.asObservable();
 
   jsonContentTypeHeaders = {
     headers: new HttpHeaders().set('Content-Type', 'application/json')  
@@ -49,6 +53,15 @@ export class GroupService {
   getSpecificMembersByGroupId(groupId: string): Observable<Groups> {
     const results = this.http.get<Groups>(`${this.allGroups}/${groupId}/members`);
     return results;
+  }
+
+  sendGroup(data): void {
+    console.log(data);
+    this.data.next(data);
+  }
+
+  getSelectedGroup(): Observable<any> {
+    return this.subject.asObservable();
   }
 
   constructor(private http: HttpClient) { }

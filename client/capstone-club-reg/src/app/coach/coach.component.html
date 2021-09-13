@@ -18,13 +18,13 @@
     </select>
     <span></span>
     <input type="button" id="edit-activity" value="edit">
-    <input type="button" id="delete-activity" value="Delete" ng-click="deleteMember(groups.GroupId)">
+    <input type="button" id="delete-activity" value="Delete">
         <span></span>
 </section>
 
 <section>
     <label for="MemberName">Members:</label>
-    <select name="MemberName" id="MemberName" (change)="displayMember($event.target.value)" class='dropdown'>
+    <select name="MemberName" id="MemberName" class='dropdown'>
         <label for="MemberName"></label>
         <option value="GroupName" selected>Select Member</option>
         <option *ngFor="let members of allMembers" value="{{ members.MemberId }}"> {{ members.MemberName }}</option>
@@ -38,5 +38,6 @@
     <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
     <button class="button" [routerLink]="['addMember']">Add Member</button>
     <button class="button" [routerLink]="['editGroup']">Edit an Activity</button>
+    <button class="button" [routerLink]="['viewAll']">View Groups and Members</button>
     <!-- <button class="button">Delete a Group</button> -->
 </section>

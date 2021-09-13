@@ -1,33 +1,17 @@
-div {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  margin: auto;
-  justify-content: center;
-}
-
-#add-activty {
-  border-radius: 12px;
-  box-shadow: 0 0 2px 1px rgba(2, 97, 50, 0.5);
-  margin: 1em;
-}
-#add-activty:hover {
-  background-color: lightskyblue;
-}
-button {
-  border-radius: 12px;
-  box-shadow: 0 0 2px 1px rgba(2, 97, 50, 0.5);
-  margin: 1em;
-}
-
-button:hover {
-  background-color: lightskyblue;
-}
-
 form {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1em;
   margin: auto;
+}
+
+.button {
+  border-radius: 12px;
+  box-shadow: 0 0 2px 1px rgba(2, 97, 50, 0.5);
+  margin: 1em;
+}
+
+.button:hover {
+  background-color: lightskyblue;
 }

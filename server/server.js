@@ -217,7 +217,6 @@ app.get("/api/groups/:groupid/members/:memberid", function (req, res) {
   console.log(match);
   res.end(JSON.stringify(match));
 });
-
 // GET MEMBERS IN A SPECIFIC GROUP
 app.get("/api/groups/:groupid/members", function (req, res) {
   let groupId = req.params.groupid;
@@ -237,7 +236,6 @@ app.get("/api/groups/:groupid/members", function (req, res) {
   console.log(matchingGroup.Members);
   res.end(JSON.stringify(matchingGroup.Members));
 });
-
 // ADD A GROUP
 app.post("/api/groups", urlencodedParser, function (req, res) {
   console.log("Received a POST request to add a group");
@@ -390,6 +388,7 @@ app.post("/api/groups/:id/members", urlencodedParser, function (req, res) {
     return;
   }
 
+  // add the member
   // add the member
   if (Number(match.MaxGroupSize) === match.Members.length) {
     res.status(409).send("Group is already full. Can not add new members");

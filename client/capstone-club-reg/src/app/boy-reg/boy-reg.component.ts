@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Groups } from '../models/groups';
+import { GroupService } from '../services/group.service';
 
 @Component({
   selector: 'cr-boy-reg',
@@ -10,6 +12,6 @@ export class BoyRegComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+     }
 
 }

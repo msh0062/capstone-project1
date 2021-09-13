@@ -1,6 +1,6 @@
 export interface Members {
-    MemberId: number,
+    MemberId: string,
     MemberEmail: string,
     MemberName: string,
-    MemberPhone: number
+    MemberPhone: string
 }
