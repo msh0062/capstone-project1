@@ -1,4 +1,3 @@
-//Club = Organization
 
 export interface Clubs {
         OrganizationName: string;

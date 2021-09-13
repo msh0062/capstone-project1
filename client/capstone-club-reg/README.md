@@ -16,9 +16,9 @@ First is a client shell and the next a server shell in terminal. You can right c
 
 ## Step 2
 
-- In the server shell type `node server.js` and hit enter. You should see it say "App listening at port 8082". This will get the backend api we have to run to get data.
+- In the server shell, type `node server.js` and hit enter. You should see it say "App listening at port 8082". This will get the backend api we have to run to get data.
 
-At this point everything should be up and running
+# At this point everything should be up and running
 
 # CapstoneClubReg
 
