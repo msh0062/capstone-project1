@@ -15,7 +15,7 @@ button {
 }
 
 button:hover {
-  background-color: lightsalmon;
+  background-color: lightskyblue;
 }
 
 section {
@@ -25,4 +25,7 @@ section {
 }
 span {
   margin: 0.5em;
+}
+input:hover {
+  background-color: lightskyblue;
 }

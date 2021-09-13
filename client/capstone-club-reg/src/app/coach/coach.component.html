@@ -12,6 +12,9 @@
         <option value="GroupName" selected>Select Activity</option>
         <option *ngFor="let groups of allGroups" value="{{ groups.GroupId }}"> {{ groups.GroupName }}</option>
     </select>
+    <span></span>
+    <input type="button" id="edit-activity" value="edit">
+    <input type="button" id="delete-activity" value="Delete">
         <span></span>
     <label for="MemberName">Members:</label>
     <select name="MemberName" id="MemberName" (change)="displayMember($event.target.value)" class='dropdown'>
@@ -19,7 +22,11 @@
         <option value="GroupName" selected>Select Member</option>
         <option *ngFor="let members of allMembers" value="{{ members.MemberId }}"> {{ members.MemberName }}</option>
     </select>
-        </section>
+    <span></span>
+    <input type="button" id="edit-member" value="edit">
+    <input type="button" id="delete-member" value="Delete">
+</section>
+
     <section class="buttons">
         <button class="button" [routerLink]="['addGroup']">Add New Activity</button>
         <button class="button" [routerLink]="['editGroup']">Edit an Activity</button>

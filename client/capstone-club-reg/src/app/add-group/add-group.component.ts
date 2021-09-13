@@ -1,4 +1,3 @@
-import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Groups } from '../models/groups';
@@ -40,8 +39,21 @@ export class AddGroupComponent implements OnInit {
       SponsorPhone: ['', Validators.required],
       SponsorEmail: ['', Validators.required, Validators.email],
       MaxGroupSize: ['', Validators.required],
-    });
-   }
+      Members: fb.group ({
+        MemberId: [''],
+        MemberEmail: [''],
+        MemberName: [''],
+        MemberPhone: [''],
+      })
+   });
+  }
+
+  ngOnInit(): void {
+  }
+
+  onSubmit(groups: Groups):void {
+    this.groupService.addGroup(groups).subscribe();
+  }
 
   // saveGroup(): void {
   //   const data = {
@@ -80,12 +92,6 @@ export class AddGroupComponent implements OnInit {
     //   };
     // }
 
-  ngOnInit(): void {
-    
-  }
 
-  onSubmit(groups: Groups):void {
-    this.groupService.addGroup(groups).subscribe();
-  }
 
 }

@@ -8,5 +8,12 @@ export interface Groups {
     SponsorPhone: string,
     SponsorEmail: string,
     MaxGroupSize: string,
-    Members: Members[]
+    Members: Members[
+    //     {
+    //     MemberId: number,
+    //     MemberEmail: string,
+    //     MemberName: string,
+    //     MemberPhone: number
+    // }
+    ]
 }
