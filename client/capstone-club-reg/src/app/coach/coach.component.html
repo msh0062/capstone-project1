@@ -9,17 +9,13 @@
 </section>
 
 <section>
-        <span></span>
+        
     <label for="GroupName">Activities:</label>
 
     <select  name="GroupName" id="GroupName" (change)="displayGroups($event.target.value)" class='section1'>
         <option value="GroupName" selected>Select Activity</option>
         <option *ngFor="let groups of allGroups" value="{{ groups.GroupId }}"> {{ groups.GroupName }}</option>
     </select>
-    <span></span>
-    <input type="button" id="edit-activity" value="edit">
-    <input type="button" id="delete-activity" value="Delete">
-        <span></span>
 </section>
 
 <section>
@@ -29,9 +25,6 @@
         <option value="GroupName" selected>Select Member</option>
         <option *ngFor="let members of allMembers" value="{{ members.MemberId }}"> {{ members.MemberName }}</option>
     </select>
-    <span></span>
-    <input type="button" id="edit-member" value="edit">
-    <input type="button" id="delete-member" value="Delete">
 </section>
 
 <section class="buttons">

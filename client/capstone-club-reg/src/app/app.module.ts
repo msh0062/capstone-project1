@@ -17,11 +17,9 @@ import { GirlRegComponent } from './girl-reg/girl-reg.component';
 import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
 import { AddGroupComponent } from './add-group/add-group.component';
 import { ViewListComponent } from './view-list/view-list.component';
-import { DeleteGroupComponent } from './delete-group/delete-group.component';
 import { EditActivityComponent } from './edit-activity/edit-activity.component';
 import { AddMemberComponent } from './add-member/add-member.component';
 import { ViewGroupsMembersComponent } from './view-groups-members/view-groups-members.component';
-
 
 @NgModule({
   declarations: [
@@ -38,7 +36,6 @@ import { ViewGroupsMembersComponent } from './view-groups-members/view-groups-me
     MixedRegComponent,
     AddGroupComponent,
     ViewListComponent,
-    DeleteGroupComponent,
     EditActivityComponent,
     AddMemberComponent,
     ViewGroupsMembersComponent,

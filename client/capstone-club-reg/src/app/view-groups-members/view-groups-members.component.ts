@@ -30,6 +30,7 @@ data;
 }
 
 deleteRow(id){
+  alert("You Successfully Deleted an Activity")
   this.groupService.deleteGroupById(id)
       .subscribe((res: any) => {
       console.log(id)

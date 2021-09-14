@@ -11,6 +11,7 @@ import { MixedRegComponent } from './mixed-reg/mixed-reg.component';
 import { ViewAllComponent } from './view-all/view-all.component';
 import { ViewGroupsMembersComponent } from './view-groups-members/view-groups-members.component';
 
+
 const fallbackRoute: Route = {
   path: '**', component: HomeComponent
 }

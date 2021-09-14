@@ -26,9 +26,7 @@ section {
   font-size: xx-large;
   font-family: Arial, Helvetica, sans-serif;
 }
-span {
-  margin: 0.5em;
-}
+
 input:hover {
   background-color: lightskyblue;
 }
