@@ -29,18 +29,21 @@ data;
   });  
 }
 
-deleteRow(id){
-  alert("You Successfully Deleted an Activity")
+deleteRow(id): void {
+  alert("You Successfully Deleted an Activity. Please refresh the page!")
   this.groupService.deleteGroupById(id)
       .subscribe((res: any) => {
-      console.log(id)
+      console.log(id);
         this.data = res;
-      console.log(this.data)
+      console.log(this.data);
+      this.groupService.getAllGroups().subscribe(groups => this.allGroups = groups);
   },
-  err => {this.errorMessage = err;
-  console.log(this.errorMessage);
-  });  
-}
+    err => { this.errorMessage = err;
+      console.log(this.errorMessage);
+      }); 
+    
+  }
+
 
   ngOnInit(): void {
     this.getGroups();

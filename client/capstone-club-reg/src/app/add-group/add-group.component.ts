@@ -25,12 +25,6 @@ export class AddGroupComponent implements OnInit {
       SponsorPhone: ['', Validators.required],
       SponsorEmail: ['', Validators.required, Validators.email],
       MaxGroupSize: ['', Validators.required],
-      Members: fb.group ({
-        MemberId: [''],
-        MemberEmail: [''],
-        MemberName: [''],
-        MemberPhone: [''],
-      })
    });
   }
 
@@ -40,7 +34,7 @@ export class AddGroupComponent implements OnInit {
   // TODO add check to see if activity exists or not
   onSubmit(groups: Groups):void {
     this.groupService.addGroup(groups).subscribe();
-    alert('You succesfully added a new Actvity')
+    alert('You successfully added a new Activity')
   }
 
 }
