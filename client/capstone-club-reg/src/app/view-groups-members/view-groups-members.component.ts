@@ -38,7 +38,7 @@ deleteRow(id): void {
       console.log(id);
         this.data = res;
       console.log(this.data);
-      this.groupService.getAllGroups().subscribe(groups => this.allGroups = groups);
+      window.location.reload()
   },
     err => { this.errorMessage = err;
       console.log(this.errorMessage);

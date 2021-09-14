@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { group } from 'console';
-import { Clubs } from '../models/clubs';
 import { Groups } from '../models/groups';
 import { Members } from '../models/members';
 import { ClubsService } from '../services/clubs.service';
