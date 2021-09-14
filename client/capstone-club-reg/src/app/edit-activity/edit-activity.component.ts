@@ -10,40 +10,13 @@ import { GroupService } from '../services/group.service';
 })
 export class EditActivityComponent implements OnInit {
 
-  // seeAllGroupsInfo: FormGroup;
-  // errorMessage: string;
-  // groups: Groups;
 
-  // constructor(private groupService: GroupService, private fb: FormBuilder) { 
-  //   this.seeAllGroupsInfo = this.fb.group({
-  //     GroupName: ['', Validators.required],
-  //   })
-  // }
-
-  // getGroups(): void {
-  //   this.groupService.getAllGroups()
-  //   .subscribe( 
-  //     res => {
-  //     console.log(res)
-  //   }, 
-  //   err => {this.errorMessage = err;
-  //     console.log(this.errorMessage);
-  //   });
-  // }
-
-  // ngOnInit(): void {
-    
-  // }
-
-  // onSubmit(groups: Groups):void {
-  //   this.groupService.getAllGroups().subscribe();
-  // }
-
+  // TODO get the edit working with input
   @Input() selectedActivityId: string;
   @Input() selectedOrgName: string;
   group = null;
   editActivityForm: FormGroup;
-  //TODO Implement .setValue() for OrgName
+
 
   getActivity(): void {
     if (this.selectedActivityId == null) {
@@ -55,7 +28,6 @@ export class EditActivityComponent implements OnInit {
         console.log(error);
       }
     );
-    //console.log(JSON.stringify(this.booth));
   }
 
   constructor(private groupService: GroupService, private fb: FormBuilder) {
@@ -73,7 +45,6 @@ export class EditActivityComponent implements OnInit {
   onSubmit(formValues) {
     this.editActivityForm?.controls.OrganizationName.setValue(this.selectedOrgName);
     console.log(formValues);
-    //this.boothsService.editBoothById(formValues);
   }
 
   ngOnInit(): void {

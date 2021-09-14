@@ -1,3 +1,18 @@
 <h2>Welcome to the registration for the boys group!</h2>
 
-<!-- TODO add form for User -->
+<!-- TODO add form for User  and submit method based on GroupdId -->
+<form [formGroup]="addForm">
+   
+    <label for="MemberName">Kid Name: </label>
+    <input id="MemberName" type="text" formControlName="MemberName">
+
+    <label for="MemberPhone">Contact Phone: </label>
+    <input id="MemberPhone" type="tel" formControlName="MemberPhone">
+
+    <label for="MemberEmail">Contact Email: </label>
+    <input id="MemberEmail" type="email" formControlName="MemberEmail">
+
+    <input class="button" type="submit" id="add-activty" value="Submit">
+  </form>
+
+    <!-- TODO add success page once form is filled out and validated -->

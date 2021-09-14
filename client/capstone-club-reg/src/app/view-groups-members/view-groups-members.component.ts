@@ -8,6 +8,8 @@ import { MemberService } from '../services/member.service';
   templateUrl: './view-groups-members.component.html',
   styleUrls: ['./view-groups-members.component.css']
 })
+
+//TODO Get Members and display them 
 export class ViewGroupsMembersComponent implements OnInit {
 
   constructor(private groupService: GroupService, private memberService: MemberService) { }

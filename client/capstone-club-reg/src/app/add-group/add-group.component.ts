@@ -17,6 +17,7 @@ export class AddGroupComponent implements OnInit {
   errorMessage: string;
   submit: boolean;
 
+  //TODO Add validations
   constructor(private fb: FormBuilder, private groupService: GroupService) {
     this.addForm = this.fb.group({
       GroupName: ['', Validators.required],
@@ -31,7 +32,7 @@ export class AddGroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // TODO add check to see if activity exists or not
+  // TODO add check to see if activity exists 
   onSubmit(groups: Groups):void {
     this.groupService.addGroup(groups).subscribe();
     alert('You successfully added a new Activity')

@@ -1,13 +1,6 @@
-<!-- <form [formGroup]="seeAllGroupsInfo" (ngSubmit)='onSubmit(seeAllGroupsInfo.value)'>
 
-    <label for="GroupName">Activity Name: </label>
-    <input id="GroupName" type="text" formControlName="GroupName">
-
-    <input class="button" type="submit" id="add-activty" value="Submit">
-</form> -->
 <!-- TODO: Implement editing function -->
 <form [formGroup]="editActivityForm" (ngSubmit)="onSubmit(editActivityForm.value)">
-    <!-- TODO: Input validation -->
     <label for="boothName">Activity: </label>
     <input type="text" value="{{ group?.GroupName }}" formControlName="GroupName" />
     <label for="">Coach Name: </label>
