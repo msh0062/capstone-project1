@@ -1,6 +1,22 @@
 form {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 1em;
   margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form > div {
+  justify-content: space-between;
+}
+
+.button {
+  border-radius: 12px;
+  box-shadow: 0 0 2px 1px rgba(2, 97, 50, 0.5);
+  margin: 1em;
+}
+
+.button:hover {
+  background-color: lightskyblue;
 }

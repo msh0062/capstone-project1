@@ -1,7 +1,21 @@
-<form [formGroup]="seeAllGroupsInfo" (ngSubmit)='onSubmit(seeAllGroupsInfo.value)'>
+<!-- <form [formGroup]="seeAllGroupsInfo" (ngSubmit)='onSubmit(seeAllGroupsInfo.value)'>
 
     <label for="GroupName">Activity Name: </label>
     <input id="GroupName" type="text" formControlName="GroupName">
 
     <input class="button" type="submit" id="add-activty" value="Submit">
-</form>
+</form> -->
+<!-- TODO: Implement editing function -->
+<form [formGroup]="editActivityForm" (ngSubmit)="onSubmit(editActivityForm.value)">
+    <!-- TODO: Input validation -->
+    <label for="boothName">Activity: </label>
+    <input type="text" value="{{ group?.GroupName }}" formControlName="GroupName" />
+    <label for="">Coach Name: </label>
+    <input type="text" value="{{ group?.SponsorName }}" formControlName="SponsorName" />
+    <label for="">Coach Phone Number: </label>
+    <input type="tel" value="{{ group?.SponsorPhone }}" formControlName="SponsorPhone" />
+    <label for="">Coach Email: </label>
+    <input type="email" value="{{ group?.SponsorEmail }}" formControlName="SponsorEmail" />
+    <input class="button" type="submit" value="Submit" />
+    <input class="button" type="button" [routerLink]="['', 'coach']" value="Back">
+  </form>

@@ -40,8 +40,8 @@ groupId: string;
 // TODO Make adding Member Dynamic
   onSubmit(member: Members): void {
     console.log(member);
-    // this.memberService.addMember(1, member).subscribe(); // hard coded
-    this.memberService.addMember(this.selectedActivity.GroupId, member).subscribe();
+    this.memberService.addMember('1', member).subscribe(); // hard coded
+    // this.memberService.addMember(this.selectedActivity.GroupId, member).subscribe();
   }
 
 

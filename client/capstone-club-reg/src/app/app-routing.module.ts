@@ -30,7 +30,7 @@ const routes: Routes = [
       {path: 'coach/addGroup', component: AddGroupComponent},
       {path: 'coach/editGroup', component: EditActivityComponent},
       {path: 'coach/addMember', component: AddMemberComponent},
-      {path: 'coach/viewAll', component: ViewGroupsMembersComponent},
+      {path: 'coach/viewCoaches', component: ViewGroupsMembersComponent},
       fallbackRoute
     ]
   }

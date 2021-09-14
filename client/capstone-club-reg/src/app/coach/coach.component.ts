@@ -70,6 +70,7 @@ export class CoachComponent implements OnInit {
       err => {
         this.errorMessage =err;
       })
+      window.location.reload();
   }
 
   displayClub(name): void {

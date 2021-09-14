@@ -35,6 +35,7 @@ export class AddGroupComponent implements OnInit {
   onSubmit(groups: Groups):void {
     this.groupService.addGroup(groups).subscribe();
     alert('You successfully added a new Activity')
+    window.location.reload();
   }
 
 }
