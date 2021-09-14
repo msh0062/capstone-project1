@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { group } from 'console';
 import { Clubs } from '../models/clubs';
 import { Groups } from '../models/groups';
 import { Members } from '../models/members';
@@ -73,16 +74,21 @@ export class CoachComponent implements OnInit {
       window.location.reload();
   }
 
+  displayGroupsById(groupId: string): void {
+    this.groupService.getGroupById(groupId)
+      .subscribe(group => {
+        this.allGroups = group;
+      },
+      err =>{ this.errorMessage =err
+    })
+  }
+
   displayClub(name): void {
    this.getGroupsName(name);
   }
 
   displayGroups(name): void {
   this.getMembers(name);
-  }
-
-  displayMember(id):void {
-    // this.getMembers(id);
   }
 
   addMember(groupId): void {
